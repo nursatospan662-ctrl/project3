@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Расстановки в волейболе — схемы и роли</title>
+  <meta name="description" content="Сайт, посвящённый расстановкам в волейболе: 5-1, 6-2, 4-2, позиции игроков и их роли." />
+  <style>
+    :root{--accent:#ff8c00;--dark:#041526;--muted:#6b7280;--bg:#f8fafc}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;margin:0;background:var(--bg);color:#0f172a}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    header{background:linear-gradient(90deg,var(--accent),#ff8c00);color:white;padding:28px 20px}
+    nav{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:0.4px}
+    .logo{font-weight:700;font-size:20px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:6px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.08)}
+    .menu{display:flex;gap:12px}
+    .menu a{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:8px;font-weight:600}
+    .card{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(8,15,26,0.06);margin-bottom:18px}
+    h1,h2{margin:0 0 12px}
+    p{color:var(--muted)}
+
+    .court{width:100%;max-width:700px;margin:12px auto;display:block}
+    .pos{cursor:pointer;transition:transform .12s}
+    .pos:hover{transform:scale(1.06)}
+    .tooltip{position:fixed;background:white;border-radius:8px;padding:10px;box-shadow:0 8px 24px rgba(2,6,23,0.12);display:none;z-index:999;max-width:260px}
+
+    .formations{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .formation-img{width:100%;border-radius:8px}
+
+    @media(max-width:900px){.formations{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.menu{display:none}.formations{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Волейбол: Растаровка</div>
+        <div class="menu">
+        <nav>  
+            <div class="logo">Volleyboll</div>
+            <a href="osnovy .html">Основы и правила</a>
+            <a href="osnovyrasstanovka .html">Расстановки игроков</a>
+            <a href="osnovyigrok.html">Знаменитые волейболисты</a>
+            <a href="osnovyhistory.html">История волейбола</a>
+            <a href="кесте.html">Амплуа игроков</a>
+            </div>
+        </nav>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="container">
+    <section class="card" id="about">
+      <h1>Расстановки в волейболе — схемы и роли</h1>
+      <p>Этот сайт объясняет популярные тактические схемы: <strong>5-1, 6-2, 4-2</strong>, а также показывает где стоят игроки и какие у них роли. Нажмите на цифры в схеме, чтобы увидеть роль позиции.</p>
+    </section>
+
+ <section class="card" id="positions">
+  <h2>Расстановки игроков в волейболе</h2>
+  <p>На площадке одновременно находятся шесть игроков. Три — в передней линии (4, 3, 2) и три — в задней (5, 6, 1). После перехода подачи игроки двигаются по часовой стрелке.</p>
+
+  <ul>
+    <li><strong>Позиция 1</strong> — правый задний, зона подачи;</li>
+    <li><strong>Позиция 2</strong> — правый передний, нападающий;</li>
+    <li><strong>Позиция 3</strong> — центральный передний, блокирующий;</li>
+    <li><strong>Позиция 4</strong> — левый передний, основной атакующий;</li>
+    <li><strong>Позиция 5</strong> — левый задний, принимающий;</li>
+    <li><strong>Позиция 6</strong> — центральный задний, либеро/защитник.</li>
+  </ul>
+
+
+  <div style="text-align:center; position: relative;">
+    <svg id="court-svg" class="formation-img" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" aria-labelledby="courtTitle" style="max-width:600px;">
+      <title id="courtTitle">Волейбольная площадка с позициями</title>
+      <rect x="20" y="20" width="660" height="360" rx="12" fill="#e6f3fb" stroke="#b6dff3"/>
+      <line x1="350" y1="20" x2="350" y2="380" stroke="#9fcfe9" stroke-width="4"/>
+      <rect x="20" y="140" width="660" height="120" fill="#fff" opacity="0.6"/>
+
+      <!-- front row: 4,3,2 -->
+      <g class="pos" data-pos="4" transform="translate(120,120)">
+        <circle cx="0" cy="0" r="28" fill="#0077b6" />
+        <text x="0" y="7" font-size="20" text-anchor="middle" fill="#fff">4</text>
+      </g>
+      <g class="pos" data-pos="3" transform="translate(350,120)">
+        <circle cx="0" cy="0" r="28" fill="#0077b6" />
+        <text x="0" y="7" font-size="20" text-anchor="middle" fill="#fff">3</text>
+      </g>
+      <g class="pos" data-pos="2" transform="translate(580,120)">
+        <circle cx="0" cy="0" r="28" fill="#0077b6" />
+        <text x="0" y="7" font-size="20" text-anchor="middle" fill="#fff">2</text>
+      </g>
+
+      <!-- back row: 5,6,1 -->
+      <g class="pos" data-pos="5" transform="translate(120,280)">
+        <circle cx="0" cy="0" r="28" fill="#00b4d8" />
+        <text x="0" y="7" font-size="20" text-anchor="middle" fill="#fff">5</text>
+      </g>
+      <g class="pos" data-pos="6" transform="translate(350,280)">
+        <circle cx="0" cy="0" r="28" fill="#00b4d8" />
+        <text x="0" y="7" font-size="20" text-anchor="middle" fill="#fff">6</text>
+      </g>
+      <g class="pos" data-pos="1" transform="translate(580,280)">
+        <circle cx="0" cy="0" r="28" fill="#00b4d8" />
+        <text x="0" y="7" font-size="20" text-anchor="middle" fill="#fff">1</text>
+      </g>
+    </svg>
+
+    <!-- tooltip внутри секции -->
+    <div id="pos-tooltip" style="position:absolute;display:none;padding:8px 10px;background:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(2,6,23,0.12);max-width:240px;pointer-events:none;font-size:14px;color:#0f172a;"></div>
+  </div>
+
+  <!-- Скрипт — помести прямо здесь, после SVG (работает без внешних зависимостей) -->
+  <script>
+    (function(){
+      const info = {
+        '1': {title: 'Позиция 1 — Правый задний', text: 'Зона подачи и приёма, часто исполняет подачу. Отвечает за приём и переход в атаку.'},
+        '2': {title: 'Позиция 2 — Правый передний', text: 'Нападающий справа, важен блок и мощный удар.'},
+        '3': {title: 'Позиция 3 — Центральный передний', text: 'Центральный блокирующий, быстрые атаки в центре.'},
+        '4': {title: 'Позиция 4 — Левый передний', text: 'Основной атакующий слева, часто получает большинство передач.'},
+        '5': {title: 'Позиция 5 — Левый задний', text: 'Защитник/принимающий, помогает в обороне и контратаках.'},
+        '6': {title: 'Позиция 6 — Центральный задний', text: 'Опорный защитник, здесь часто действует либеро или игрок приёма.'}
+      };
+
+      const section = document.getElementById('positions');
+      const svg = section.querySelector('#court-svg');
+      const tooltip = section.querySelector('#pos-tooltip');
+
+      // Найдём все группы .pos внутри SVG
+      const positions = svg.querySelectorAll('.pos');
+
+      // Функции показа/скрытия
+      function showTip(posId, clientX, clientY) {
+        const data = info[posId];
+        if(!data) return;
+        tooltip.innerHTML = '<strong>' + data.title + '</strong><div style="margin-top:6px;color:#334155">' + data.text + '</div>';
+        tooltip.style.display = 'block';
+        // позиционируем относительно контейнера секции
+        const rect = section.getBoundingClientRect();
+        // смещаем немного от курсора
+        let left = clientX - rect.left + 12;
+        let top = clientY - rect.top + 12;
+        // не даём тултипу выйти за правую границу секции
+        const maxRight = rect.width - 20 - tooltip.offsetWidth;
+        if(left > maxRight) left = maxRight;
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = top + 'px';
+      }
+      function hideTip() {
+        tooltip.style.display = 'none';
+      }
+
+      // Добавляем слушатели к каждой позиции
+      positions.forEach(node => {
+        const posId = node.getAttribute('data-pos');
+        // mouseenter/mousemove для десктопа
+        node.addEventListener('mouseenter', (e) => showTip(posId, e.clientX, e.clientY));
+        node.addEventListener('mousemove', (e) => showTip(posId, e.clientX, e.clientY));
+        node.addEventListener('mouseleave', hideTip);
+        // click — на мобильных устройствах или для явного открытия
+        node.addEventListener('click', (e) => {
+          const d = info[posId];
+          if(d) {
+            // маленькое всплывающее окно — можно заменить на модальное при желании
+            alert(d.title + "\\n\\n" + d.text);
+          }
+        });
+        // touch (mobile): show on touchstart, hide on touchend
+        node.addEventListener('touchstart', (e) => {
+          const touch = e.touches[0];
+          if(touch) showTip(posId, touch.clientX, touch.clientY);
+        }, {passive:true});
+        node.addEventListener('touchend', hideTip, {passive:true});
+      });
+
+      // Скрывать тултип при клике вне SVG
+      document.addEventListener('click', (e) => {
+        if(!section.contains(e.target)) hideTip();
+      });
+    })();
+  </script>
+</section>
+
+
+
+    <section class="card" id="formations">
+      <h2>Популярные расстановки</h2>
+      <div class="formations">
+        <div class="container">
+          <h3>5-1 (один пасующий)</h3>
+          <p>Одна связка (пасующий) — стабильно, хороша для команд с сильным пасующим и несколькими нападающими.</p>
+          <br>
+          <svg viewBox="0 0 400 200" aria-hidden="true">
+                <rect x="20" y="20" width="360" height="160" rx="8" fill="none" stroke="#ffe6c8" stroke-width="2"></rect>
+                <g font-family="sans-serif" font-size="14" text-anchor="middle" fill="#1a2b3c">
+                  <circle cx="80" cy="60" r="18" fill="#fff" stroke="#f0d" />
+                  <text x="80" y="64">1</text>
+                  <circle cx="200" cy="60" r="18" fill="#fff" stroke="#f0d" />
+                  <text x="200" y="64">2</text>
+                  <circle cx="320" cy="60" r="18" fill="#fff" stroke="#f0d" />
+                  <text x="320" y="64">3</text>
+                  <circle cx="80" cy="140" r="18" fill="#fff" stroke="#f0d" />
+                  <text x="80" y="144">4</text>
+                  <circle cx="200" cy="140" r="18" fill="#fff" stroke="#f0d" />
+                  <text x="200" y="144">5</text>
+                  <circle cx="320" cy="140" r="18" fill="#fff" stroke="#f0d" />
+                  <text x="320" y="144">6</text>
+                </g>
+                <text x="200" y="18" text-anchor="middle" font-size="12" fill="#ff8a00">5-1 — один пасующий</text>
+              </svg>
+        </div>
+        <div class="container">
+          <h3>6-2 (шесть нападающих)</h3>
+          <p>Шесть нападающих, двое выполняют функции связующих, которые играют на задней линии — даёт больше возможностей для нападения.</p>
+          <br>
+          <svg viewBox="0 0 400 200" aria-hidden="true">
+                <rect width="100%" height="100%" fill="none"></rect>
+                <!-- court lines -->
+                <rect x="20" y="20" width="360" height="160" rx="8" fill="none" stroke="#cfe7ff" stroke-width="2"></rect>
+                <!-- players as circles with numbers -->
+                <g font-family="sans-serif" font-size="14" text-anchor="middle" fill="#0a1f44">
+                  <circle cx="80" cy="60" r="18" fill="#fff" stroke="#cde" />
+                  <text x="80" y="64">1</text>
+                  <circle cx="200" cy="60" r="18" fill="#fff" stroke="#cde" />
+                  <text x="200" y="64">2</text>
+                  <circle cx="320" cy="60" r="18" fill="#fff" stroke="#cde" />
+                  <text x="320" y="64">3</text>
+                  <circle cx="80" cy="140" r="18" fill="#fff" stroke="#cde" />
+                  <text x="80" y="144">4</text>
+                  <circle cx="200" cy="140" r="18" fill="#fff" stroke="#cde" />
+                  <text x="200" y="144">5</text>
+                  <circle cx="320" cy="140" r="18" fill="#fff" stroke="#cde" />
+                  <text x="320" y="144">6</text>
+                </g>
+                <text x="200" y="18" text-anchor="middle" font-size="12" fill="#0a74ff">6-2 — шесть нападающих</text>
+              </svg>
+        </div>
+        <div class="container">
+          <h3>4-2 (две связки)</h3>
+          <p>Простая схема для начинающих: 2 связки и 4 нападающих. Чаще применяется в школе и на любительском уровне.</p>
+          <br>
+          <svg viewBox="0 0 400 200" aria-hidden="true">
+                <rect x="20" y="20" width="360" height="160" rx="8" fill="none" stroke="#d9ffd9" stroke-width="2"></rect>
+                <g font-family="sans-serif" font-size="14" text-anchor="middle" fill="#083">
+                  <circle cx="80" cy="60" r="18" fill="#fff" stroke="#cde" />
+                  <text x="80" y="64">1</text>
+                  <circle cx="200" cy="60" r="18" fill="#fff" stroke="#cde" />
+                  <text x="200" y="64">2</text>
+                  <circle cx="320" cy="60" r="18" fill="#fff" stroke="#cde" />
+                  <text x="320" y="64">3</text>
+                  <circle cx="80" cy="140" r="18" fill="#fff" stroke="#cde" />
+                  <text x="80" y="144">4</text>
+                  <circle cx="200" cy="140" r="18" fill="#fff" stroke="#cde" />
+                  <text x="200" y="144">5</text>
+                  <circle cx="320" cy="140" r="18" fill="#fff" stroke="#cde" />
+                  <text x="320" y="144">6</text>
+                </g>
+                <text x="200" y="18" text-anchor="middle" font-size="12" fill="#0aa64a">4-2 — два пасующих</text>
+              </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="tips">
+      <h2>Советы по выбору расстановки</h2>
+      <ul>
+        <li>Если у вас один сильный пасующий — выбирайте <strong>5-1</strong>.</li>
+        <li>Если два игрока умеют хорошо пасовать — <strong>6-2</strong> увеличит атакующие опции.</li>
+        <li>Для начинающих и любителей <strong>4-2</strong> проще в понимании и постановке.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="tooltip" class="tooltip" role="dialog" aria-hidden="true"></div>
+
+  
+</body>
+</html>

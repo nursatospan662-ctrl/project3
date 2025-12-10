@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Волейбол — История волейбола</title>
+  <meta name="description" content="Простой одностраничный сайт — основы, правила и советы по тренировкам по волейболу." />
+  <style>
+   
+    :root{--accent:#ff8c00;--dark:#041526;--muted:#6b7280;--bg:rgb(#f8f8ff)}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.5;margin:0;background:var(--bg);color:#0f172a}
+    a{text-decoration:none;color:inherit}
+
+    header{background:linear-gradient(90deg,var(--accent),#ff8c00);color:white;padding:28px 20px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    nav{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:0.4px}
+    .logo{font-weight:700;font-size:20px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 12px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.08)}
+    .menu{display:flex;gap:12px}
+    .menu a{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:8px;font-weight:600}
+
+    main{padding:28px 0}
+    .hero{display:grid;grid-template-columns:1fr 400px;gap:24px;align-items:center}
+    .hero h1{font-size:28px;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .card{background:white;border-radius:12px;box-shadow:0 6px 20px rgba(8,15,26,0.06);padding:18px}
+
+  
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    section{margin-bottom:18px}
+    h2{font-size:18px;margin:0 0 12px}
+    ul{margin:0;padding-left:18px;}
+
+  
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+
+    footer{padding:18px 0;color:var(--muted);font-size:14px}
+
+   
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    
+
+    .faq-item{border-radius:10px;overflow:hidden}
+    .faq-button{width:100%;text-align:left;padding:12px 14px;background:#f1f5f9;border:none;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+    .faq-content{padding:12px 14px;background:white;display:none}
+
+    .block {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+}
+
+.block img {
+    width: 250px;
+    height: auto;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Волейбол: История </div>
+        <div class="menu">
+        <nav>  
+            <div class="logo">Volleyboll</div>
+            <a href="osnovy .html">Основы и правила</a>
+            <a href="osnovyrasstanovka .html">Расстановки игроков</a>
+            <a href="osnovyigrok.html">Знаменитые волейболисты</a>
+            <a href="osnovyhistory.html">История волейбола</a>
+            <a href="кесте.html">Амплуа игроков</a>
+            </div>
+        </nav>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class = "container">
+   <section class="card" id="about">
+    <h2>Происхождение волейбола</h2><br>
+    <div class = "block">
+    <img id="dimg_ZFEcacCOE7ym1fIPmZO_UQ_29" src="data:image/jpeg;base64,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" style="object-position:47% 37%" alt="Уильям Г. Морган" class="YQ4gaf" height="272" width="180" data-csiid="ZFEcacCOE7ym1fIPmZO_UQ_30" data-atf="1" style="float:left; margin-right:20px; width:250px;">
+<p>
+    Волейбол был изобретён в 1895 году в городе Холиок (США) преподавателем физкультуры Уильямом Дж. Морганом. Он хотел создать игру, которая была бы менее травмоопасной, чем баскетбол, но при этом помогала развивать ловкость, быстроту реакции и командную работу.
+
+Изначально игра называлась «mintonette» (минтонет), но вскоре после демонстрационной игры в 1896 году её переименовали в volleyball («летающий мяч»), так как игроки перебрасывали мяч через сетку в воздухе.
+
+Со временем правила были усовершенствованы, игра стала популярной по всему миру, и в 1964 году волейбол был включён в программу Олимпийских игр.
+</p>
+</div>
+<p style="margin-left: 30px;">Уильям Морган</p>
+<div style="clear:both;"></div>
+
+   </section>
+
+   <section class = "card" id="about">
+    <h2>Развитие игры в 1980—1990-е годы</h2>
+     <p>
+        Период 1980–1990-х годов стал ключевым этапом в истории мирового волейбола. 
+        В эти годы игра преобразилась, стала быстрее, мощнее и зрелищнее, а конкуренция 
+        среди сборных выросла до рекордного уровня.
+    </p>
+
+    <h2>Усиление международной конкуренции</h2>
+    <p>
+        В 1980-е годы на мировой сцене доминировали сборные СССР, США, Бразилии, Италии и Кубы. 
+        Команды активно внедряли новые тактические схемы и скоростные комбинации, а подача «скачком» 
+        и «флот» стала неотъемлемой частью игры.
+    </p>
+
+    <h2>Успех сборной США</h2>
+    <p>
+        Мужская сборная США стала одним из символов волейбольной эпохи, выиграв Олимпийские игры 
+        1984 и 1988 годов. Их стиль отличался высокой скоростью, продуманной тактикой и 
+        инновационными тренировочными методиками.
+    </p>
+
+    <h2>«Золотая эра» итальянского волейбола</h2>
+    <p>
+        В конце 1980-х и особенно в 1990-х годах Италия стала настоящей супердержавой волейбола. 
+        Национальная сборная регулярно побеждала на чемпионатах мира и Европы, а итальянская лига Serie A 
+        стала сильнейшей в мире.
+    </p>
+    <h2>Развитие техники и тактики</h2>
+    <p>
+        В эти десятилетия игра стала значительно быстрее. 
+        Появились новые типы блокирования, ускоренные передачи, акцент на силовой игре. 
+        Команды начали активно использовать спортивную науку, что резко повысило 
+        уровень подготовки волейболистов.
+    </p>
+
+    <h2>Рост популярности пляжного волейбола</h2>
+    <p>
+        1990-е годы стали прорывом для пляжного волейбола. 
+        Он стремительно набирал популярность во всём мире, а в 1996 году впервые был включён 
+        в программу Олимпийских игр в Атланте.
+    </p>
+
+    <h2>Подготовка к новым правилам</h2>
+    <p>
+        В конце 1990-х годов началась разработка новых правил, которые должны были сделать волейбол 
+        более динамичным и удобным для телевизионных трансляций. 
+        Переход к системе «ралли-пойнт» был сформирован именно в этот период 
+        и официально утверждён в начале 2000-х.
+    </p>
+
+  
+  </section>
+
+   <section class = "card" id="about">
+    <h2>Современный волейбол</h2>
+    <ul>
+    <li>По данным, в волейбол хотя бы раз в неделю играет более 800 миллионов человек по всему миру.</li>
+    <li>Существуют разные форматы и разновидности волейбола: помимо классического «залового» волейбола — пляжный волейбол, адаптированные формы для людей с ограниченными возможностями.</li>
+    <li>Волейбол доступен людям разного возраста и уровня подготовки — от любителей до профессионалов, что делает его универсальным спортом.</li>
+    </ul>
+  </section>
+  </main>
+
+</body>
+</html>

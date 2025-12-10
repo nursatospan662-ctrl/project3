@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Расстановки в волейболе — схемы и объяснения</title>
+  <link rel="stylesheet" href="igrok.CSS">
+  <meta name="description" content="Сайт, посвящённый расстановкам в волейболе: 5-1, 6-2, 4-2, позиции игроков и их роли." />
+  <style>
+    :root{--accent:#ff8c00;--dark:#041526;--muted:#6b7280;--bg:#f8fafc}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;margin:0;background:var(--bg);color:#0f172a}
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:20px;
+    }
+
+    header{
+      background:linear-gradient(90deg,var(--accent),#ff8c00);
+      color:white;padding:28px 20px
+    }
+
+    nav{
+      display:flex;
+      gap:12px;align-items:center;
+      justify-content:space-between
+    }
+
+    .brand{font-weight:700;letter-spacing:0.4px}
+    .logo{font-weight:700;font-size:20px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:6px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.08)}
+    .menu{display:flex;gap:12px}
+    .menu a{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:8px;font-weight:600}
+    .card{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(8,15,26,0.06);margin-bottom:18px}
+    h1,h2{margin:0 0 12px}
+    p{color:var(--muted)}
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .player {
+      position:relative;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 280px;
+      padding: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+      overflow:visible;
+      transition: transform 0.2s;
+    }
+
+    .player::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:220px;
+    height:100px;
+    border-radius:50%;
+    background: radial-gradient(closest-side, rgba(0,180,255,0.35), rgba(0,180,255,0.08) 60%, transparent 70%);
+    filter: blur(18px);
+    opacity:0;
+    pointer-events:none;
+    transition: opacity .25s ease, transform .25s ease;
+    z-index: -1;
+    }
+
+    .player:hover {
+      transform: scale(1.05);
+      transform: translateY(-6px);
+    }
+
+    .player:hover::before{
+    opacity:1;
+    transform: translate(-50%,-50%) scale(1.05);
+    }
+
+
+    .player h2 {
+      color: #0077b6;
+      margin: 10px 0 5px;
+      text-align: center;
+    }
+
+    .player p {
+      padding: 0 10px 20px;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .player img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+ 
+    }
+
+    .center {
+      width: auto;
+      height: auto;
+    }
+
+    .info {
+       display: none;
+       margin-top: 10px;
+       padding: 10px;
+       background: #c5ffc5;
+       border-radius: 6px;
+    }
+
+    .info.active {
+       display: block;
+    }
+
+   
+
+    footer{padding:18px 0;color:var(--muted);font-size:14px}
+
+    .court{width:100%;max-width:700px;margin:12px auto;display:block}
+    .pos{cursor:pointer;transition:transform .12s}
+    .pos:hover{transform:scale(1.06)}
+    .tooltip{position:fixed;background:white;border-radius:8px;padding:10px;box-shadow:0 8px 24px rgba(2,6,23,0.12);display:none;z-index:999;max-width:260px}
+
+    .formations{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .formation-img{width:100%;border-radius:8px}
+
+    @media(max-width:900px){.formations{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.menu{display:none}.formations{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Волейбол: Волейболисты</div>
+        <div class="menu">
+        <nav>  
+            <div class="logo">Volleyboll</div>
+            <a href="osnovy .html">Основы и правила</a>
+            <a href="osnovyrasstanovka .html">Расстановки игроков</a>
+            <a href="osnovyigrok.html">Знаменитые волейболисты</a>
+            <a href="osnovyhistory.html">История волейбола</a>
+            <a href="кесте.html">Амплуа игроков</a>
+            </div>
+        </nav>
+        </div>
+      </nav>
+    </div>
+  </header>
+<main>
+    <div class="player" onclick="toggleInfo(this)">
+      <img id="dimg_U0AnaaW2EPPvwPAP3peawQ8_21" src="data:image/jpeg;base64,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" style="object-position:47% 100%" alt="Вильфредо Леон » клубы :: Волейбокс" class="YQ4gaf" height="200" width="200" data-csiid="U0AnaaW2EPPvwPAP3peawQ8_9" data-atf="1">
+      <h2>Вильфредо Леон</h2>
+      <p><ul>
+            <li>Возраст: 32 лет</li>
+            <li>Национальность: Польша</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 202см</li>
+            <li>Вес: 96кг</li>
+          </ul></p>
+          <div class="info">
+            Вильфредо Леон родился на Кубе и уже в 14 лет попал в национальную сборную — стал самым молодым игроком сборной в истории Кубы.
+            В 2015 году получил польское гражданство и позже начал выступать за сборную Польши.
+            Считается одним из лучших игроков мира благодаря невероятной физике, силе удара и подаче.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/17629617373zIOh.png" jsaction="" class="sFlh5c FyHeAf iPVvYb"  alt="Иван Зайцев » клубы :: Волейбокс" jsname="kn3ccd">
+      <h2>Иван Зайцев</h2>
+      <p><ul>
+            <li>Возраст: 37 лет</li>
+            <li>Национальность: Россия</li>
+            <li>Позиция: диагональный</li>
+            <li>Рост: 204см</li>
+            <li>Вес: 92кг</li>
+          </ul></p>
+          <div class="info">
+            Иван Зайцев родился в Перудже (Италия) в семье знаменитого российского волейболиста Вячеслава Зайцева.
+            Начинал как доигровщик, позже стал диагональным.
+            Известен своей мощной подачей, лидерством и харизмой. Один из самых популярных волейболистов Европы.
+ь          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img id="dimg_HEEnaezAMv2HwPAP_Za--AI_12" src="data:image/jpeg;base64,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" style="object-position:50% 42%" alt="Юдзи Нисида » клубы :: Волейбокс" class="YQ4gaf" height="200" width="200" data-csiid="HEEnaezAMv2HwPAP_Za--AI_19" data-atf="1">
+      <h2>Юдзи Нисида</h2>
+      <p><ul>
+            <li>Возраст: 25 лет</li>
+            <li>Национальность: Япония</li>
+            <li>Позиция: диагональный</li>
+            <li>Рост: 187см</li>
+            <li>Вес: 87кг</li>
+          </ul></p>
+          <div class="info">
+            Юдзи Нисида — японский волейболист, прославившийся своим невероятным прыжком, скоростью и взрывной атакой. Несмотря на невысокий рост для диагонального (186 см), он стал одним из самых зрелищных игроков мира.
+            Профессиональную карьеру начал очень рано: в 2018 году дебютировал в V.League в возрасте 17 лет и сразу стал звездой.
+           </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1760765661orri5.png" alt="Yuki Ishikawa" class=" logo">
+      <h2>Юки Исикава</h2>
+      <p><ul>
+            <li>Возраст: 29 лет </li>
+            <li>Национальность: Япония</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 192см</li>
+            <li>Вес: 84кг</li>
+          </ul></p>
+          <div class="info">
+            Юки Ишикава — главный лидер сборной Японии и один из самых технических игроков мира.
+            Он прославился благодаря идеальному приёму, высокой скорости, гибкости и мощной атаке, несмотря на не самый высокий рост для мирового уровня.
+            В Европу попал ещё студентом — играл за итальянские клубы Modena, Latina, Piacenza и Milano, став одним из самых уважаемых азиатских игроков в серии A.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1758635844P8Zbn.png" alt="Simeon Nikolov" class=" logo">
+      <h2>Симеон Николов</h2>
+      <p><ul>
+            <li>Возраст: 18 лет</li>
+            <li>Национальность: Болгария</li>
+            <li>Позиция: связующий</li>
+            <li>Рост: 208см</li>
+            <li>Вес: 92кг</li>
+          </ul></p>
+          <div class="info">
+            Симеон Николова — талантливая болгарская волейболистка, выступающая на национальном и клубном уровне. Известна своей техникой и командной игрой. Представляет Болгарию на международных турнирах.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1744564641HOq7d.png" alt="Earvin Ngapeth" class="center">
+      <h2>Эрвин Нгапет</h2>
+      <p><ul>
+            <li>Возраст: 34 лет</li>
+            <li>Национальность: Франция</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 194см</li>
+            <li>Вес: 94кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1761289821Pf0uQ.png" alt="Osmany Juantorena" class=" logo">
+      <h2>Османи Хуанторена</h2>
+      <p><ul>
+            <li>Возраст: 40 лет</li>
+            <li>Национальность: Куба</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 199см</li>
+            <li>Вес: 85кг</li>
+          </ul></p>
+          <div class="info">
+            Османи Хуанторена родился на Кубе и начал карьеру в национальной сборной Кубы. Позже получил итальянское гражданство и стал выступать за сборную Италии. Известен своей мощной атакой, универсальностью и отличным техническим уровнем.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1761666300t4Rd0.png" alt="Micah Christenson" class=" logo">
+      <h2>Майка Кристенсон</h2>
+      <p><ul>
+            <li>Возраст: 32 лет</li>
+            <li>Национальность: США</li>
+            <li>Позиция: связующий</li>
+            <li>Рост: 198см</li>
+            <li>Вес: 88кг</li>
+          </ul></p>
+          <div class="info">
+            Майка Кристенсон — ключевой связующий сборной США, известный своей точной передачей, отличным видением площадки и лидерскими качествами. Начал карьеру в молодежных командах США и быстро стал основным игроком национальной сборной.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1758696593Kz04r.png" alt="Trévor Clévenot" class=" logo">
+      <h2>Тревор Клевено</h2>
+      <p><ul>
+            <li>Возраст: 31 лет</li>
+            <li>Национальность: Франция</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 199см</li>
+            <li>Вес: 90кг</li>
+          </ul></p>
+          <div class="info">
+            Тревор Клевено — перспективный и техничный французский волейболист, который выступает за сборную Франции и профессиональные клубы Европы. Известен стабильной атакой и надёжной игрой в защите.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img id="dimg_5WIjabr4Nv-twPAPod714A0_93" src="data:image/jpeg;base64,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" style="object-position:52% 38%" alt="Максим Михайлов » клубы :: Волейбокс" class="YQ4gaf" height="200" width="200" data-csiid="5WIjabr4Nv-twPAPod714A0_49" data-atf="4">
+      <h2>Максим Михайлов</h2>
+      <p><ul>
+            <li>Возраст: 31 лет</li>
+            <li>Национальность: Франция</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 199см</li>
+            <li>Вес: 90кг</li>
+          </ul></p>
+          <div class="info">
+            Максим Михайлов — лидер и ключевой игрок сборной России. Начал карьеру в клубе «Зенит-Казань», с которым завоевал множество титулов. Известен мощной атакой, надёжной подачей и отличной игрой в защите.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img id="dimg_U0AnaaW2EPPvwPAP3peawQ8_21" src="data:image/jpeg;base64,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" style="object-position:47% 100%" alt="Вильфредо Леон » клубы :: Волейбокс" class="YQ4gaf" height="200" width="200" data-csiid="U0AnaaW2EPPvwPAP3peawQ8_9" data-atf="1">
+      <h2>Вильфредо Леон</h2>
+      <p><ul>
+            <li>Возраст: 32 лет</li>
+            <li>Национальность: Польша</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 202см</li>
+            <li>Вес: 96кг</li>
+          </ul></p>
+          <div class="info">
+            Вильфредо Леон родился на Кубе и уже в 14 лет попал в национальную сборную — стал самым молодым игроком сборной в истории Кубы.
+В 2015 году получил польское гражданство и позже начал выступать за сборную Польши.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/17629617373zIOh.png" jsaction="" class="sFlh5c FyHeAf iPVvYb"  alt="Иван Зайцев » клубы :: Волейбокс" jsname="kn3ccd">
+      <h2>Иван Зайцев</h2>
+      <p><ul>
+            <li>Возраст: 37 лет</li>
+            <li>Национальность: Россия</li>
+            <li>Позиция: диагональный</li>
+            <li>Рост: 204см</li>
+            <li>Вес: 92кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img id="dimg_HEEnaezAMv2HwPAP_Za--AI_12" src="data:image/jpeg;base64,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" style="object-position:50% 42%" alt="Юдзи Нисида » клубы :: Волейбокс" class="YQ4gaf" height="200" width="200" data-csiid="HEEnaezAMv2HwPAP_Za--AI_19" data-atf="1">
+      <h2>Юдзи Нисида</h2>
+      <p><ul>
+            <li>Возраст: 25 лет</li>
+            <li>Национальность: Япония</li>
+            <li>Позиция: диагональный</li>
+            <li>Рост: 187см</li>
+            <li>Вес: 87кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1760765661orri5.png" alt="Yuki Ishikawa" class=" logo">
+      <h2>Юки Исикава</h2>
+      <p><ul>
+            <li>Возраст: 29 лет </li>
+            <li>Национальность: Япония</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 192см</li>
+            <li>Вес: 84кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1758635844P8Zbn.png" alt="Simeon Nikolov" class=" logo">
+      <h2>Симеон Николов</h2>
+      <p><ul>
+            <li>Возраст: 18 лет</li>
+            <li>Национальность: Болгария</li>
+            <li>Позиция: связующий</li>
+            <li>Рост: 208см</li>
+            <li>Вес: 92кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1744564641HOq7d.png" alt="Earvin Ngapeth" class=" logo">
+      <h2>Эрвин Нгапет</h2>
+      <p><ul>
+            <li>Возраст: 34 лет</li>
+            <li>Национальность: Франция</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 194см</li>
+            <li>Вес: 94кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1761289821Pf0uQ.png" alt="Osmany Juantorena" class=" logo">
+      <h2>Османи Хуанторена</h2>
+      <p><ul>
+            <li>Возраст: 40 лет</li>
+            <li>Национальность: Куба</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 199см</li>
+            <li>Вес: 85кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1761666300t4Rd0.png" alt="Micah Christenson" class=" logo">
+      <h2>Майка Кристенсон</h2>
+      <p><ul>
+            <li>Возраст: 32 лет</li>
+            <li>Национальность: США</li>
+            <li>Позиция: связующий</li>
+            <li>Рост: 198см</li>
+            <li>Вес: 88кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img src="https://volleybox.net/media/upload/players/1758696593Kz04r.png" alt="Trévor Clévenot" class=" logo">
+      <h2>Тревор Клевено</h2>
+      <p><ul>
+            <li>Возраст: 31 лет</li>
+            <li>Национальность: Франция</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 199см</li>
+            <li>Вес: 90кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    <div class="player" onclick="toggleInfo(this)">
+      <img id="dimg_5WIjabr4Nv-twPAPod714A0_93" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxASEBUSEhAVFRUWFRUVFRgVFRYVFhUVFRUWFhUVFRcYHSggGBolHRUXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0lICUuLS0tLS4tLS8tLy0tKy0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMgAyAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQIEBQYDBwj/xAA9EAABAwIDBQYDBQcEAwAAAAABAAIRAyEEEjEFQVFhcQYTIoGRoTKxwQcU0eHwI0JDUmJykhaCsvEzRKL/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMEAQX/xAAkEQACAwACAgICAwEAAAAAAAAAAQIDESExBBITURRBMmHwIv/aAAwDAQACEQMRAD8A3qEiVXlQIQkQAhKhAIkSlIUAhKYSlcVg+1f2g0qJNLDxUfcF0+Bp5R8R9uaN4EjY43H0qTc1Wo1g/qMeg3rK7T+0PC05FMGpbX4BPC4n2XlW0NqVqzi6pUc4z+8T1te3koJO5VubJqJt9ofaZinn9mxlMdC4nqSm4f7TsYCM7KbhwALSfOSsQWoyLms7h7BsP7RcPVIbWb3RMQc2Zt+JgEei2mHrte0OY4OadCCCD6L5raYWi7Odpa+GMUnkgwS1x8M77HkBpdSUzjie7gpwWe7Odp6GKaAHBtQi7DrbeP1uWgCmnpDByEgTkAiEqEAJEqEAiVIlQDkIQgBCEIAQhCAQphKcVT9qtp/dsK+qD4ohnNx0/HyQIx/2h9r3MzYaiSDpUdoRI+Fv1K80p0cwmL6fj8x6KQ8vqvLnEuc50knUk/r3C3GxOz9MUwagkm8aC9491msszlmmupyeIwBwpXQbLqRIaTfgvU8Hsmg0yKTbcb/NXNPDNj4R6Kn5/pF68b7Z4vT2RVJHgPouu0dj1KQbmb8TZHlqF7J3Dd7QfILni8JSqCH0wQNJGifMzv46w8L7h0SByRSBmNF6w7s3hhLQyBI38DzVZjeyuHmRmB5EW9lJXog/GkYnBYuoxwdTdlcDLToQRuH63r13sR2oGLZkfaq0S4SPEOLRr1svOsT2dcwyx2YTobO/NJh31MDXp1G5g4DM4aS0uMt5iBr+CthYt4KZ1tdnuISqNgMU2rTbUaZDmgjzUkLQZxUIQgBCEqARCEqAIulQlQCIQhACEIQCFef/AGn1nEUqINrvPyF/VegELF9pML3uMIictNrbagklx/5NULHkSda2Rhdl7Nl7ZG/23L0huGDWjoFA2Hsf9oDBLQ4SYiBxWi2rRDYjgFgs5N9XBAo0grCm1sKLRUvI4CxUIlzGVGtXB7bp7nmVzc+6NnUiLVaJKhYpm9WFdu9VmLconSorNuUnbjZn7HD1Mv8ADLJ63H1XYXd5rX9psB3mzmRHhynhYC6urM1xTfZpiS7Cupn+G8gdHX+crYhYTsAwsr1mbi0O8w6Leq3YW6D2JgmsYJUIUyIiEqEAiVCEA5CEIAQhCAEIQgBZug/NiK5IkZg3/aPDbzBV9iMUxkZjE74MeZ3KjwZ/b1PCZLzroYLva/sFTbJZhbXF9s0GHwmSm0DWxPnr0sq7atUFwaNAFclwk3gDXovNu1uMrd68U5ycp08lmktNcHjNTh3s1zD1U6lVad68e++1oIYHnjlzEfkortp12uHxDkSWpGOEnLT2itSabqI2jJuslsDary2HOnrM+fFahuKiSeCqlmlsdwTEAAKmxgVXt7tMWOIaRv5rOf6sq3lrTzuD811QbOSsS4NZSZ4h1Xo5wgrYQU26lgjh5/rcvGsH2lacuYfQr1/spjG1cOwtdI0/L3VkFjxlFrTWozmxcD3WKeDaGEX/ALmn9dVpAm4po+9VDyaN0b/wTlsrWRMc3rBCEqmQEQlSIAQhCAclQhAIhKkQAglC54k+B0fyn5LjeLTsVrSKPZtWpWfVc95NNz8tJtoaG2Lh1KlPpBlei1v7wkxazJuf/lVbsR93pNaA5zg1rcrSAS7V1yOJKv8AAMNXEOqEQGMawDmfE4z5geS8+D1npXLOuh+0K4aI43PRYnb3eVXHK0BvAix4TG7ktftNpz+yinDghcfYikkeb9oMFi2kd0H1GOpgeEuAY+buDWEAW0m11Pp7Ff3NIVPG8jxAkSDNvFpprJ81uqeHMQGhNODDbwFc+UQSx9lBszZDaL2nVp3Hceif2u2h3dMltrQrJxLn+yp+1GBNVpaBJAc7/EEn2Co7Zd0jz1mGfXeMxIzGABdzug+qdjMPSw7iw0iXtdDmlzs8ZcxdAaW5R/d5Rda3s3TYYdlGYWnQkcJF1abV2RQrEPewFwi54DQHiOsq5SS7KXFvoxTKFIgSzLmAcDNwDoefzC9X+z2gadDLmzAmR5WI5arEv2cx+ZrmQ4kZXcIK0/Yeq6lU7txlug6kgWXE+TkovCdtXb1GjijTOZ9WpUgMpgEgC0ukiBqrhYvtaynSxNd1KRinUs4cP3WgtzRwOTNcXGVXHYyu5+CplxJIlsnkTHtA8ldVZsvUpsqyHuXqEIWgzAhCEAJEqRAPQhCAEIQgBI7Q9EqCJXH0djwzP4XK6o4ltxMcuJV9symA7mYk8sot7eygbTw0taQ4seN++ePmpODqg1KTtJafYkEe3svPhw+T0rn7LUSdrUbSquldXW0+KoaNSCuz/kKnsSVBGi44t0BdBV3qJtCqCEcuCXryV+Hd4vMfNO2pXDXVHWkU3x1cI+RK6UMI60g+KI5yoW1aRFQSJvEKC1Emk0ZTs5VOYjnIWupmQJWbwezXUMS+i+xaZHNrrtPotJRbxST5OQWo44ikBferLs1hs1QOG4qsxdSAtT2Ow2VmY712vlkbcjEyXb57G7TpkggGm1rzxY7M1465XK/7J4U08JTadYJPmSflCzn2j1m1K9BjRNRznEDfldABPD4W+hW4othoHAAey0UrZtme55UkPQlQtRjEQlSIASJUiAehCEAIQhACVCEBxxlPMywkjRR8Ix7Q3MADLoFpAta3GPdTlwxIu22+esXVFta5kX12PiIYvFZqXMTPkqLOZXSs8l5BJEAmBvO/3XHDvkSRGmvRYpy02VrDtTcSV1xVMZOf1VTtDaop/Dr7Kjxe3azwQwHeJAsOET0XFyWtlmO0eIlzKtMQ27HMdcRGo4Qqur2xpUnB75c4GWtAOu4km0DXyCqKrawMuJknffkR7qv25hy4nwn00sLc/wA1aueyqXC4L7Fdp/vmLZVDCIZlcSIzXkLRsxIyrzfZGINOzmaFarCY3O21935KNi5O1ySWFjmz1A0cVvdm1MmHcTYNBj/Ee8ysDgQGHvHGLgCeJNlqGYh1bDFogBwABM3zHLMcLrsOCFr0phsurUr1Hggtq1mtO4jD0pDo4SMotrmPFbAKNs7CljGh0F4blJExA4T0HopS10w9VyZLrPZpL9AhCVXFIiRKhAIkSoQDkJUIAQhCAEIQgBcsSPDPCD7wfYldU6m2ZHEEeyjNbFko9ozGKZBLtDeN8m+iitJ1mf8AoDzVg3CPOY3s4iDqBpxUU5QMo3FebJHoxZXYvCGqS0VIMiYAMAbvZQsRs7FNMMdTLd3hg/Mq12ecryCJ53uZPr6qdUpTouJ4WGUP30bmnrp6FqrMZ97u5zWEX0I3+XJWe2dtVqL8htvt7KFR27UdY3nl6K3f6GroqH0qjv8A17zq1wA+attmYPJDyYdMlsz52XWvJgmxO5d69T4bbokXKjKW8EPVLktsTSJygOHjcI4REmP8gtPsykAwBumbeDuk6+XyWfwzHvLW7h/LF79eUea1OFb1sCLnfPD9aqypbJFFjyJJQhC3GIEJUiACkSoQCIQhAPQhCAEIQgBCEIAT6OoTE6nqOq4+jq7Kfajgyrn3Gzvo7yWbxzzTqlxktIBkCQZPLXdfmtZtpl4Kye1sO5rYElpOaJsDxAPy/R898vDcuFqGV67SMzXQCbk6brLpszbTQMsl24GLWv8AILOYrEnM0E5iZ1sAOlr7/JccHXykknxZSQLRGs6akBc9CamWu1D39UutkmJy2IEyJ42Kq6OH7txc0F2+8W01Huujqn7OToMsCZ5uM89/CVwq4o5cw6k8bWA8gu+vBL2J+K2mxzBa+/y1+XuobMWSQBMT851HJVDny7Uk24q3wGCtIcQRF+GkRe6eqRBz02PZun4s0ER8INjmJmNL3Mc7LWMp5bG5m/VUfY+lJBd/tHC5ur95uepWihdsy3MRCELSUCoSJUAiEIQCIQhAdEISIAQlQgEQhCAErdUgC7YigW5OJcM3TKTHqAuSeLTsVrwg7baqqpRD2xFlebWZIVRSsYXny7N8ejHba2KQS5s/ToVksb3jCZbuidbR+S9dxNCRoqLHbJa4GQpJ4RcTzH7+8A31EeXBK3HPcA3l5cdy1OM7OiTAsqyrsvLoFP2RD1YzYWz31TDGudMTaGi51JjkpWOxApkU2kFwPiI+Gfr15+asNn4o0aDrxIjqs5SoOfUE7z56qPZI9a7BOLmg8NTu4xzV4oHZPDilh9IAaT0FzJVgr6Oii7sEIQrykEIQgBCEIBEIQgOiEiEOAhI51jFyNwXSlRLhJOUe6l6s57I5lwCKhgAmRJjy4wpEtAhtzxKi4skgTdTjD7KpWfRZYZjdyMbJYY1Fx5aj0SYR/gHuuxCrlHdRdCWYyhxGMDgFDp6lM2tS7qsQND4h0P5yPJGHK82Se4z0o5mommnIUerQUxuia+OinhHSor4QcFRY/CjgtZUCqdoUlxo6jF1sMSY3J+zsEO9aOa0LcGNYXHB0w2sDwKi2dw3OGoTQezTNTc3/ACaR9V1ygUabydWNJ/xBlRaOJ/ZOI1iBv8TrD3IUjazYY2mNzWj0C00mS0AUKlpuqNBykgiSN8wbi/IlTqO0AfiEe4WtwZmVi6JiE1lQESDKcoEwQhCAQpEqEAuJwdQCe9jyieVlAYSHZTc9SP8AtNZjXVYzcLck3FYyk6kSXtzs0ykF08hK1NKtf9MwfMp9E1j3t8PhAPkUwB7DElzT5wqFu2aBZmdVaDvBPiB5tF12weNpPHheD0N/TUInBvhoi7OOjU0qYid6rMW/M+ZsoxqWkvLRvkwPNZ7HirVqGpQqZg2GjKTOhJgDjld1jpMLJqpb2/o57+7xI07cQWmyuMDjQ4X/AF1Xnj9p4qlVbTqsBnKbCCQ7QiLe25aXC1HNMhdjKF0Xn6EJyhIte0WCL2B7RJZJPNh+L6Hy5qjpW0WjwePDrb+B+ihVtmMkluYA3i0DpyWO3xpOWo9Sny4KPJwo1CRu6ri/E7o6/lxVhSwLf5j7JDsynMmfWPkorxpkn5lf9lW+rayid0XlaAYClw9z+K5mhTGg9ypfiSf7I/nQX6ZTYyhkbZZ19WHTzWwxmFa8QXOHQj6hU/8ApsTaqTJ0LQfcEKuXh2Isj51T7Z37LufVqFxtTpi39VR1vOGzb+oK+xbySXb/AKIwdBlGmGNiBcni46k/rgoONxEnLuPv+C1UUtJaZfIvWvDkcUCZyyAYneOaWm0E8QdCqXF7UbhzBaXF1wBw4k7kmHxuJYBVNB4Y6CMozAzpmbMjqr52QUvXeTFByfZqcPTEWHr85Tw1zRYEjpuVVgO0TK1t/L8DeFMOM7u8629TC566tRarluEulUzIc8AxKAGxI19VCqVr2i2pN/ZcVWk3fhPSJlHEh0AgAnT9FCrcGi2NkWuDObWwdR2KZR7wtp1LiLf3jnu1/mXfaHZyk3/x5mvbcEy4PBmz9w01sL9UIVFsE5y3/cGeuCcWZ/FHBd8HOpOAcA45XEhxgAiNxvOt452ifcKDyzJUy5y7eC1gBJgyQfhiJ1KVCxKWrkrUtRJwmx2fxK7SPFlh9MNIAlvjLjEmRYGCE8bPqVGF1F0U2khgLjJ3ONgJmSJIFkIWnx642T9X9EJvOi12PsQsIfVMuHwjUDn1V61qVC9OFUa45EjHlgGxpqOCk5nRmYb7xuPPkUIXWWI74fEtcOB4LoY4H2SIUWsZ1coA4cD6BNeRwQhDuEWq4cEhqwNAEIUiOkKs4nU/r6JtRkkdEIUkRZWba2WKokWc3TgeRTaW3cgYK9NzXUwQDlkO0E6jcN0jehCx+VBRXyLs7XNp4ioqNbXqVa1M5CCHMaNXHKXPIi4+EmeaficPVoBmIqPzeJveC+YZnOaBzILL8NEIWKDf8i31UuWW9ftHhg2RJPANMz5wFWV9rVqVRorAZHy8taWHK0AEXG+414oQpvybJLd6KkljY3/UbXvnK5reNiI4kfhKEIU159q+iv44s//Z" style="object-position:52% 38%" alt="Максим Михайлов » клубы :: Волейбокс" class="YQ4gaf" height="200" width="200" data-csiid="5WIjabr4Nv-twPAPod714A0_49" data-atf="4">
+      <h2>Максим Михайлов</h2>
+      <p><ul>
+            <li>Возраст: 31 лет</li>
+            <li>Национальность: Франция</li>
+            <li>Позиция: дойгровшик</li>
+            <li>Рост: 199см</li>
+            <li>Вес: 90кг</li>
+          </ul></p>
+          <div class="info">
+            Эрвин Нгапет — французский волейболист, известный своей невероятной техникой, зрелищной подачей и акробатическими спасениями мяча. Один из самых популярных и узнаваемых игроков современности.
+            Он родился в семье волейболистов — его отец Эрик Нгапет также был профессиональным игроком и тренером.
+          </div>
+    </div>
+
+    
+
+    </div>
+
+
+  </main>
+  
+ <script>
+function toggleInfo(player) {
+    const info = player.querySelector(".info");
+    info.classList.toggle("active");
+}
+</script>
+
+  
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div><strong>Волейбол: Знаменитые волейболисты</strong></div>
+      <div style="color:var(--muted);font-size:13px">Оспан Нұрсәт</div>
+    </div>
+  </footer>
+  
+
+</body>
+</html>

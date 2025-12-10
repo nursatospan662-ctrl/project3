@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Амплуа игроков</title>
+  <style>
+    :root{--accent:#ff8c00;--dark:#041526;--muted:#6b7280;--bg:rgb(#f8f8ff)}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.5;margin:0;background:var(--bg);color:#0f172a}
+    a{text-decoration:none;color:inherit}
+
+
+    header{background:linear-gradient(90deg,var(--accent),#ff8c00);color:white;padding:28px 20px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    nav{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:0.4px}
+    .logo{font-weight:700;font-size:20px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 12px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.08)}
+    .menu{display:flex;gap:12px}
+    .menu a{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:8px;font-weight:600}
+
+    main{padding:28px 0}
+    .hero{display:grid;grid-template-columns:1fr 400px;gap:24px;align-items:center}
+    .hero h1{font-size:28px;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .card{background:white;border-radius:12px;box-shadow:0 6px 20px rgba(8,15,26,0.06);padding:18px}
+
+
+
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+
+    .controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+    .search {flex:1;min-width:200px}
+    input, select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit}
+
+    table{width:100%;border-collapse:collapse;font-size:.95rem;background:white;}
+    thead th{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,0.04);position:sticky;top:0}
+    tbody tr{transition:background .18s ease;border-bottom:1px solid rgba(255,255,255,0.03)}
+    tbody tr:hover{background:rgba(6,182,212,0.04)}
+    td{padding:12px;vertical-align:middle}
+    .role{font-weight:600}
+    .muted{color:var(--muted);font-size:.88rem}
+
+    .badge{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(6,182,212,0.12);color:var(--accent);font-weight:600;font-size:.85rem}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:16px}
+    aside{min-width:0}
+    .notes{padding:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border-radius:10px}
+
+    @media (max-width:900px){.grid{grid-template-columns:1fr;}.controls{flex-direction:column}.card{padding:12px}}
+  </style>
+</head>
+<body>
+    <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Волейбол: Основы </div>
+        <div class="menu">
+        <nav>  
+            <div class="logo">Volleyboll</div>
+            <a href="osnovy .html">Основы и правила</a>
+            <a href="osnovyrasstanovka .html">Расстановки игроков</a>
+            <a href="osnovyigrok.html">Знаменитые волейболисты</a>
+            <a href="osnovyhistory.html">История волейбола</a>
+            <a href="кесте.html">Амплуа игроков</a>
+             </div>
+        </nav>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <div class="controls">
+        <div class="search"><input id="q" placeholder="Поиск по амплуа, навыкам или примерам..." /></div>
+        <div style="width:220px"><select id="filter">
+          <option value="all">Показать все </option>
+          <option value="att">Атакующие</option>
+          <option value="def">Защитные</option>
+          <option value="special">Специалисты</option>
+        </select></div>
+      </div>
+
+      <div class="grid">
+        <div style="overflow:auto">
+          <table id="roles">
+            <thead>
+              <tr>
+                <th>Амплуа</th>
+                <th>Коротко — обязанности</th>
+                <th>Ключевые навыки</th>
+                <th>Примеры / номера</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-group="att">
+                <td class="role">Связующий (Setter)</td>
+                <td>Организует атаку, подаёт передачи нападающим, управляет темпом игры и расстановкой.</td>
+                <td class="muted">Техническая подача, видение поля, быстрые решения, точность передач.</td>
+                <td>№1–10; примеры: Лусио, Кирали (пример)</td>
+              </tr>
+
+              <tr data-group="att">
+                <td class="role">Доигровщик / Левый нападающий (Outside Hitter)</td>
+                <td>Основной атакующий с левой стороны; участвует в приёме подачи и обороне.</td>
+                <td class="muted">Сильная подача, универсальность, приём, игра в защите.</td>
+                <td>№4,6; примеры: Михал Кубяк</td>
+              </tr>
+
+              <tr data-group="att">
+                <td class="role">Центральный блокирующий (Middle Blocker)</td>
+                <td>Блокировка по центру сетки, быстрый выход в атаку (быстрые комбинации).</td>
+                <td class="muted">Высота и прыгучесть, блокирование, скорость реакции.</td>
+                <td>№3,11; пример: быстрый темп атаки</td>
+              </tr>
+
+              <tr data-group="att">
+                <td class="role">Доигровщик / Правый нападающий (Opposite)</td>
+                <td>Атакует с правой стороны, часто главный скорер команды; не всегда участвует в приёме.</td>
+                <td class="muted">Мощь в атаке, блок на сильной стороне, подача.</td>
+                <td>№2,7; примеры: мощные нападающие</td>
+              </tr>
+
+              <tr data-group="def">
+                <td class="role">Либеро</td>
+                <td>Специалист по приёму и обороне; не атакует из передней зоны и не подаёт (в большинстве правил может подавать из задней зоны только в некоторых лигах).</td>
+                <td class="muted">Идеальный приём, низкая позиция, быстрая реакция, чтение атаки.</td>
+                <td>№12,15 (иногда специальные номера); примеры: выдающийся приём</td>
+              </tr>
+
+              <tr data-group="special">
+                <td class="role">Дефензивный специалист (DS / Defensive Specialist)</td>
+                <td>Похож на либеро, но может менять позиции и быть заменяемым чаще; держит приём и оборону.</td>
+                <td class="muted">Гибкость, приём, выносливость</td>
+                <td>№8–16; используется в ротациях</td>
+              </tr>
+
+              <tr data-group="special">
+                <td class="role">Подающий (Serving Specialist)</td>
+                <td>Игрок, который выходит специально для подачи и затем заменяется; в профессиональной практике редко используется отдельно.</td>
+                <td class="muted">Сильная/тактическая подача, психологическая устойчивость.</td>
+                <td>Короткие замены для ключевых подач</td>
+              </tr>
+
+              <tr data-group="att">
+                <td class="role">Пассующий / Переходный (Utility/All-rounder)</td>
+                <td>Универсальный игрок, может закрыть несколько позиций при травмах или тактических заменах.</td>
+                <td class="muted">Адаптивность, базовые навыки во всех компонентах игры.</td>
+                <td>Номер варьируется</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <aside>
+          <div class="notes">
+            <h3 style="margin-top:0">Подсказки</h3>
+            <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+              <li><strong>Атакующие</strong> — играют большую роль в наборе очков.</li>
+              <li><strong>Защитные</strong> — фокус на приёме и обороне, атакуют реже.</li>
+              <li>Номера в таблице — условные; в разных лигах и командах номера отличаются.</li>
+              <li>Можно расширить таблицу: добавить фото, высоту прыжка, статистику по матчам.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+    </section>
+  </div>
+  </main>
+
+  <script>
+    const q = document.getElementById('q');
+    const filter = document.getElementById('filter');
+    const tbody = document.querySelector('#roles tbody');
+    q.addEventListener('input', apply);
+    filter.addEventListener('change', apply);
+
+    function apply(){
+      const term = q.value.trim().toLowerCase();
+      const group = filter.value;
+      Array.from(tbody.rows).forEach(row => {
+        const txt = (row.innerText || '').toLowerCase();
+        const matchesTerm = term === '' || txt.includes(term);
+        const matchesGroup = (group === 'all') || (row.dataset.group === group);
+        row.style.display = (matchesTerm && matchesGroup) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
